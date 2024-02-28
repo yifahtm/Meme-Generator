@@ -108,7 +108,6 @@ function _createImgs() {
     // gImgs[i].url= `$`.push()
 }
 
-
 function _createImg() {
     let imgId = 1
     return {
