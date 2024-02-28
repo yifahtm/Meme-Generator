@@ -12,7 +12,7 @@ function onInit() {
 
 function renderMeme() {
     const pos = getPenPos()
-    const meme = getMeme()
+    // const meme = getMeme()
     drawImg()
     drawText('I sometimes eat Falafel', pos.x, pos.y)
 }
@@ -28,13 +28,10 @@ function drawImg() {
 function drawText(text, x, y) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'orange'
-
     gCtx.fillStyle = 'lightsteelblue'
-
     gCtx.font = '45px Arial'
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
-
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
