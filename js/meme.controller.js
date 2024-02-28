@@ -11,10 +11,11 @@ function onInit() {
 }
 
 function renderMeme() {
-    const pos = getPenPos()
-    // const meme = getMeme()
+    const InitX = gElCanvas.width / 2
+    const initY = 50;
+    const meme = getMeme()
     drawImg()
-    drawText('I sometimes eat Falafel', pos.x, pos.y)
+    drawText(meme.lines[0].txt, InitX, initY)
 }
 
 function drawImg() {
@@ -26,6 +27,7 @@ function drawImg() {
 }
 
 function drawText(text, x, y) {
+    gCtx.beginPath()
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'orange'
     gCtx.fillStyle = 'lightsteelblue'
