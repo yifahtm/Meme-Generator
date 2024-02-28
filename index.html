@@ -8,15 +8,37 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
-    <header></header>
+<body onload="onInit()">
+    <header class="main-header full main-layout">
+        <div class="header-content flex space-between align-center">
+            <div class="logo">Meme Generator<span>.</span></div>
+            <nav class="main-nav">
+                <ul class="main-nav-list flex align-center  clean-list">
+                    <li class="flex align-center justify-center"><a href="#">Gallery</a></li>
+                    <li class="flex align-center justify-center"><a href="#">About</a></li>
+            </nav>
+        </div>
+    </header>
     <main>
         <section class="gallery-container">
-            <div class="search-bar"></div>
-            <div class="results"></div>
+            <div class="search-bar">
+                <input type="search">
+                <div class="popular-suggestions">
+                    <span>Funny</span>
+                    <span>Happy</span>
+                    <span>Love</span>
+                    <span>Baby</span>
+                </div>
+                <button>More</button>
+            </div>
+            <div class="results-container"></div>
         </section>
         <section class="editor-container">
-            <div class="meme-display"></div>
+            <div class="canvas-container">
+                <div class="meme-display">
+                    <canvas width="800" height="800"></canvas>
+                </div>
+            </div>
             <div class="controlls"></div>
         </section>
     </main>
