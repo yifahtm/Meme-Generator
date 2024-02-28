@@ -1,7 +1,10 @@
 'use strict'
 
-let gImgs = [{ id: 1, url: 'img/one size/1.jpg', keywords: ['funny', 'cat'] }]
+let gImgs = []
+_createImgs()
 
+
+gImgs = [{ id: 1, url: 'img/one size/1.jpg', keywords: ['funny', 'cat'] }]
 let gMemes = [{
     selectedImgId: 5,
     selectedLineIdx: 0,
@@ -45,9 +48,17 @@ function getEvPos(ev) {
     return pos
 }
 
+function updateMeme(txt) {
+    _setLineTxt(txt)
+}
+
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
+}
+
+function _setLineTxt(newTxt) {
+    gMemes[0].lines[0].txt = newTxt
 }
 
 function addMouseListeners() {
@@ -79,4 +90,30 @@ function handleEnd(ev) {
     gPen.pos = getEvPos(ev)
     gPen.isDown = false
     gCtx.closePath()
+}
+
+function _createImgs() {
+    for (let i = 0; i < 18; i++) {
+        let img = _createImg()
+        gImgs.push(img)
+        console.log(gImgs)
+    }
+
+
+
+
+    // let newImgs = []
+    // for(let i = 0;i<17;i++){
+    //  gImgs[i].id=i+2
+    // gImgs[i].url= `$`.push()
+}
+
+
+function _createImg() {
+    let imgId = 1
+    return {
+        id: imgId++,
+        url: `img/one size/${imgId++}.jpg`,
+        keywords: ['funny', 'cat']
+    }
 }
