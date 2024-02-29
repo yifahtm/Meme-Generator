@@ -15,7 +15,7 @@ function renderMeme() {
     const initY = 50;
     const meme = getMeme()
     drawImg()
-    drawText(meme.lines[0].txt, InitX, initY)
+    drawText(meme[0].lines[0].txt, InitX, initY)
 }
 
 // function drawImg() {

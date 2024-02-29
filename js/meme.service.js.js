@@ -24,11 +24,15 @@ let gLine = []
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 
 function getMeme() {
-    return gMemes[0]
+    return gMemes
 }
 
 function getImg() {
     return gImgs[0]
+}
+
+function getImgs() {
+    return gImgs
 }
 
 function getPenPos() {
@@ -93,9 +97,14 @@ function handleEnd(ev) {
 }
 
 function _createImgs() {
+    let imgId = 1
     for (let i = 0; i < 18; i++) {
-        let img = _createImg()
-        gImgs.push(img)
+        gImgs.push({
+            id: imgId,
+            url: `img/one size/${imgId}.jpg`,
+            keywords: ['funny', 'cat']
+        })
+        imgId++
         console.log(gImgs)
     }
 
