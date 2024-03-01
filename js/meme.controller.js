@@ -21,8 +21,17 @@ function drawImg(meme) {
     elImg.src = getImgs().find(img => img.id === meme.selectedImgId).url
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(meme.lines[0].txt, gElCanvas.width / 2, 50)
-        drawText(meme.lines[1].txt, gElCanvas.width / 2, 400)
+        meme.lines.forEach((line, index) => {
+            let yPosition
+            if (index === 0) {
+                yPosition = 50
+            } else if (index === 1) {
+                yPosition = 400
+            } else {
+                yPosition = 50 + (index * 60)
+            }
+            drawText(line.txt, gElCanvas.width / 2, yPosition)
+        })
     }
 }
 
@@ -39,6 +48,12 @@ function OnUpdateMeme(txt) {
     updateMeme(txt)
     renderMeme()
 }
+
+function onAddLine() {
+    addLine()
+    renderMeme()
+}
+
 
 function onChangeColor({ value }) {
     changeColor(value)

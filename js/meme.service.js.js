@@ -74,7 +74,17 @@ function getEvPos(ev) {
 }
 
 function updateMeme(txt) {
-    _setLineTxt(txt)
+    if (gMeme.lines.length > 0) _setLineTxt(txt)
+}
+
+function addLine() {
+    const newLine = {
+        txt: 'New Line',
+        size: 20,
+        color: 'white'
+    }
+    gMeme.lines.push(newLine)
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
 function setFontSize(el) {
