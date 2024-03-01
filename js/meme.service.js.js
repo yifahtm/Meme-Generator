@@ -1,12 +1,12 @@
 'use strict'
 
-let gImgs = []
-_createImgs()
-
-
-gImgs = [{ id: 1, url: 'img/one size/1.jpg', keywords: ['funny', 'cat'] }]
-let gMemes = [{
-    selectedImgId: 5,
+let gImgs = [
+    { id: 1, url: 'img/one size/1.jpg', keywords: ['funny', 'man'] },
+    { id: 2, url: 'img/one size/2.jpg', keywords: ['love', 'dog'] },
+    { id: 3, url: 'img/one size/3.jpg', keywords: ['love', 'baby'] },
+]
+let gMeme = {
+    selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [
         {
@@ -15,7 +15,7 @@ let gMemes = [{
             color: 'red'
         }
     ]
-}]
+}
 
 let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
@@ -24,11 +24,7 @@ let gLine = []
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 
 function getMeme() {
-    return gMemes
-}
-
-function getImg() {
-    return gImgs[0]
+    return gMeme
 }
 
 function getImgs() {
@@ -61,8 +57,12 @@ function addListeners() {
     addTouchListeners()
 }
 
-function _setLineTxt(newTxt) {
-    gMemes[0].lines[0].txt = newTxt
+function _setLineTxt(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}
+
+function setImg(imgId) {
+    gMeme.selectedImgId = imgId
 }
 
 function addMouseListeners() {
@@ -94,34 +94,4 @@ function handleEnd(ev) {
     gPen.pos = getEvPos(ev)
     gPen.isDown = false
     gCtx.closePath()
-}
-
-function _createImgs() {
-    let imgId = 1
-    for (let i = 0; i < 18; i++) {
-        gImgs.push({
-            id: imgId,
-            url: `img/one size/${imgId}.jpg`,
-            keywords: ['funny', 'cat']
-        })
-        imgId++
-        console.log(gImgs)
-    }
-
-
-
-
-    // let newImgs = []
-    // for(let i = 0;i<17;i++){
-    //  gImgs[i].id=i+2
-    // gImgs[i].url= `$`.push()
-}
-
-function _createImg() {
-    let imgId = 1
-    return {
-        id: imgId++,
-        url: `img/one size/${imgId++}.jpg`,
-        keywords: ['funny', 'cat']
-    }
 }
