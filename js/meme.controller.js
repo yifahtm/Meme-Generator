@@ -38,3 +38,8 @@ function OnUpdateMeme(txt) {
     updateMeme(txt)
     renderMeme()
 }
+
+function onDownload(elLink) {
+    const content = gElCanvas.toDataURL('image/jpeg')
+    elLink.href = content
+}

@@ -40,10 +40,13 @@
                     <canvas width="500" height="500"></canvas>
                 </div>
             </div>
-            <div class="controlls"></div>
-            <label for="meme-text-input">Text:</label>
-            <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
-                onchange="OnUpdateMeme(this.value)">
+            <div class="controlls">
+                <label for="meme-text-input">Text:</label>
+                <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
+                    onchange="OnUpdateMeme(this.value)">
+                <a href="#" onclick="onDownload(this)" download="my-canvas.jpg">Download canvas</a>
+            </div>
+            </div>
         </section>
     </main>
     <footer>Yifaht Meir</footer>
