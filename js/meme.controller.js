@@ -26,9 +26,9 @@ function drawImg(meme) {
 }
 
 function drawText(text, x, y) {
-    gCtx.fillStyle = 'white'
+    gCtx.fillStyle = getColor()
     gCtx.strokeStyle = 'black'
-    gCtx.font = '30px Arial'
+    gCtx.font = `${getFontSize()}px Arial`
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
@@ -39,7 +39,22 @@ function OnUpdateMeme(txt) {
     renderMeme()
 }
 
+function onChangeColor({ value }) {
+    changeColor(value)
+    renderMeme()
+}
+
+function onSetFont(el) {
+    setFontSize(el)
+    renderMeme()
+}
+// function onIncreaseFont() {
+//     decreaseFont()
+//     renderMeme()
+// }
+
 function onDownload(elLink) {
     const content = gElCanvas.toDataURL('image/jpeg')
     elLink.href = content
 }
+
