@@ -14,15 +14,16 @@
             <div class="logo">Meme Generator<span>.</span></div>
             <nav class="main-nav">
                 <ul class="main-nav-list flex align-center  clean-list">
-                    <li class="flex align-center justify-center"><a href="#">Gallery</a></li>
+                    <li class="flex align-center justify-center"><a href="#gallery">Gallery</a></li>
                     <li class="flex align-center justify-center"><a href="#">About</a></li>
             </nav>
         </div>
     </header>
     <main>
-        <section class="gallery-container">
+        <section id="gallery" class="gallery-container">
             <div class="search-bar">
-                <input type="search">
+                <label for="search">Search:</label>
+                <input type="search" id="search" name="search" placeholder="funny baby">
                 <div class="popular-suggestions">
                     <span>Funny</span>
                     <span>Happy</span>
@@ -40,7 +41,9 @@
                 </div>
             </div>
             <div class="controlls"></div>
-            <input type="text" name="input-text" onchange="OnUpdateMeme(this.value)">
+            <label for="meme-text-input">Text:</label>
+            <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
+                onchange="OnUpdateMeme(this.value)">
         </section>
     </main>
     <footer>Yifaht Meir</footer>
