@@ -54,6 +54,11 @@ function onAddLine() {
     renderMeme()
 }
 
+function onSwitchLine() {
+    switchLine()
+    document.getElementById('meme-text-input').value = getText()
+    renderMeme()
+}
 
 function onChangeColor({ value }) {
     changeColor(value)
@@ -64,10 +69,6 @@ function onSetFont(el) {
     setFontSize(el)
     renderMeme()
 }
-// function onIncreaseFont() {
-//     decreaseFont()
-//     renderMeme()
-// }
 
 function onDownload(elLink) {
     const content = gElCanvas.toDataURL('image/jpeg')

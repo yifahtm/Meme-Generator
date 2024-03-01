@@ -77,6 +77,20 @@ function updateMeme(txt) {
     if (gMeme.lines.length > 0) _setLineTxt(txt)
 }
 
+function switchLine() {
+    if (gMeme.lines.length > 1) {
+        if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
+            gMeme.selectedLineIdx = 0
+        } else {
+            gMeme.selectedLineIdx += 1
+        }
+    }
+}
+
+function getText() {
+    return gMeme.lines[gMeme.selectedLineIdx].txt
+}
+
 function addLine() {
     const newLine = {
         txt: 'New Line',
