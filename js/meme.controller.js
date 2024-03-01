@@ -22,6 +22,7 @@ function drawImg(meme) {
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         drawText(meme.lines[0].txt, gElCanvas.width / 2, 50)
+        drawText(meme.lines[1].txt, gElCanvas.width / 2, 400)
     }
 }
 
