@@ -4,6 +4,17 @@ let gImgs = [
     { id: 1, url: 'img/one size/1.jpg', keywords: ['funny', 'man'] },
     { id: 2, url: 'img/one size/2.jpg', keywords: ['love', 'dog'] },
     { id: 3, url: 'img/one size/3.jpg', keywords: ['love', 'baby'] },
+    { id: 4, url: 'img/one size/4.jpg', keywords: ['sleepy', 'cat'] },
+    { id: 5, url: 'img/one size/5.jpg', keywords: ['happy', 'baby'] },
+    { id: 8, url: 'img/one size/8.jpg', keywords: ['interesting', 'man'] },
+    { id: 9, url: 'img/one size/9.jpg', keywords: ['funny', 'baby'] },
+    { id: 10, url: 'img/one size/10.jpg', keywords: ['funny', 'man'] },
+    { id: 11, url: 'img/one size/11.jpg', keywords: ['love', 'man'] },
+    { id: 12, url: 'img/one size/12.jpg', keywords: ['funny', 'man'] },
+    { id: 15, url: 'img/one size/15.jpg', keywords: ['interesting', 'man'] },
+    { id: 16, url: 'img/one size/16.jpg', keywords: ['funny', 'man'] },
+    { id: 17, url: 'img/one size/17.jpg', keywords: ['interesting', 'man'] },
+    { id: 18, url: 'img/one size/18.jpg', keywords: ['funny', 'toy'] },
 ]
 let gMeme = {
     selectedImgId: 1,
