@@ -24,7 +24,7 @@ let gMeme = {
             txt: 'I sometimes eat Falafel',
             size: 20,
             color: 'white'
-        },
+        }
     ]
 }
 
