@@ -23,8 +23,13 @@ let gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'red'
-        }
+            color: 'white'
+        },
+        {
+            txt: 'I sometimes eat Falafel',
+            size: 20,
+            color: 'white'
+        },
     ]
 }
 
@@ -32,6 +37,7 @@ let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 let gPen = { pos: null, isDown: false }
 let gLine = []
+let gColor = 'white'
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 
 function getMeme() {
@@ -40,6 +46,14 @@ function getMeme() {
 
 function getImgs() {
     return gImgs
+}
+
+function changeColor(value) {
+    gMeme.lines[gMeme.selectedLineIdx].color = value
+}
+
+function getColor() {
+    return gMeme.lines[gMeme.selectedLineIdx].color
 }
 
 function getPenPos() {
@@ -61,6 +75,16 @@ function getEvPos(ev) {
 
 function updateMeme(txt) {
     _setLineTxt(txt)
+}
+
+function setFontSize(el) {
+    console.log(el.classList)
+    if (el.classList.contains('increase')) gMeme.lines[0].size += 2
+    else if (el.classList.contains('decrease')) gMeme.lines[0].size -= 2
+}
+
+function getFontSize() {
+    return gMeme.lines[gMeme.selectedLineIdx].size
 }
 
 function addListeners() {
