@@ -12,6 +12,7 @@ function onInit() {
 }
 
 function renderMeme() {
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
     const meme = getMeme()
     drawImg(meme)
 }
@@ -30,19 +31,47 @@ function drawImg(meme) {
             } else {
                 yPosition = 50 + (index * 60)
             }
-            drawText(line.txt, gElCanvas.width / 2, yPosition)
+            drawText(line.txt, gElCanvas.width / 2, yPosition, index)
         })
     }
 }
 
-function drawText(text, x, y) {
-    gCtx.fillStyle = getColor()
+function drawText(text, x, y, lineIndex) {
+    const color = getColor()
+    console.log(`Drawing text with color: ${color}`)
+
+    gCtx.fillStyle = color;
     gCtx.strokeStyle = 'black'
     gCtx.font = `${getFontSize()}px Arial`
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
+    const textWidth = gCtx.measureText(text).width
+    const textHeight = parseInt(gCtx.font, 10)
+    setLinePos(x, y, lineIndex, textWidth, textHeight)
+    // const selectedIdx = getSelectedIdx()
+    // if (lineIndex === selectedIdx) {
+    //     drawRectangleAroundText(text, x, y)
+    // }
 }
+
+// function drawRectangleAroundText(text, x, y) {
+//     const measurements = gCtx.measureText(text)
+//     const textWidth = measurements.width
+//     const fontSize = parseInt(gCtx.font, 10)
+//     const padding = 10
+
+
+//     const rectX = x - textWidth / 2 - padding
+//     const rectY = y - fontSize / 2 - padding
+//     const rectWidth = textWidth + 2 * padding
+//     const rectHeight = fontSize + 2 * padding
+//     gCtx.beginPath()
+//     gCtx.rect(rectX, rectY, rectWidth, rectHeight)
+//     gCtx.strokeStyle = 'lightgrey'
+//     gCtx.lineWidth = 2
+//     gCtx.stroke()
+// }
 
 function OnUpdateMeme(txt) {
     updateMeme(txt)
@@ -60,7 +89,8 @@ function onSwitchLine() {
     renderMeme()
 }
 
-function onChangeColor({ value }) {
+function onChangeColor(event) {
+    const { value } = event.target
     changeColor(value)
     renderMeme()
 }

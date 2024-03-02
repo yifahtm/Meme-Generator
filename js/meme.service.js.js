@@ -49,28 +49,18 @@ function getImgs() {
 }
 
 function changeColor(value) {
+    console.log(`Changing color of line ${gMeme.selectedLineIdx} to ${value}`)
     gMeme.lines[gMeme.selectedLineIdx].color = value
 }
 
 function getColor() {
-    return gMeme.lines[gMeme.selectedLineIdx].color
+    const color = gMeme.lines[gMeme.selectedLineIdx].color;
+    console.log(`Getting color for line ${gMeme.selectedLineIdx}: ${color}`);
+    return color;
 }
 
 function getPenPos() {
     return gPen
-}
-
-function getEvPos(ev) {
-    let pos = { x: ev.offsetX, y: ev.offsetY }
-    if (TOUCH_EVENTS.includes(ev.type)) {
-        ev.preventDefault()
-        ev = ev.changedTouches[0]
-        pos = {
-            x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
-        }
-    }
-    return pos
 }
 
 function updateMeme(txt) {
@@ -91,6 +81,10 @@ function getText() {
     return gMeme.lines[gMeme.selectedLineIdx].txt
 }
 
+function getSelectedIdx() {
+    return gMeme.selectedLineIdx
+}
+
 function addLine() {
     const newLine = {
         txt: 'New Line',
@@ -99,6 +93,21 @@ function addLine() {
     }
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
+}
+
+function setLinePos(x, y, lineIndex, textWidth, textHeight) {
+    gMeme.lines[lineIndex].pos = {
+        x: x - textWidth / 2,
+        y: y - textHeight / 2,
+        width: textWidth,
+        height: textHeight
+    }
+    // gMeme.lines.forEach((line, pos))=> {
+    //     line.pos.x = x - textWidth / 2
+    //     line.pos.y = y - textHeight / 2
+    //     line.pos.width = textWidth
+    //     line.pos.height = textHeight
+    // }
 }
 
 function setFontSize(el) {
@@ -111,11 +120,6 @@ function getFontSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
 
-function addListeners() {
-    addMouseListeners()
-    addTouchListeners()
-}
-
 function _setLineTxt(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
@@ -123,6 +127,26 @@ function _setLineTxt(txt) {
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
 }
+
+function addListeners() {
+    addMouseListeners()
+    addTouchListeners()
+    gElCanvas.addEventListener('click', function (event) {
+        const { offsetX, offsetY } = event
+        const clickedLineIndex = gMeme.lines.findIndex(line => {
+            const pos = line.pos
+            return offsetX >= pos.x && offsetX <= pos.x + pos.width &&
+                offsetY >= pos.y && offsetY <= pos.y + pos.height
+        })
+
+        if (clickedLineIndex !== -1) {
+            gMeme.selectedLineIdx = clickedLineIndex
+            document.getElementById('meme-text-input').value = gMeme.lines[clickedLineIndex].txt
+            renderMeme()
+        }
+    })
+}
+
 
 function addMouseListeners() {
     gElCanvas.addEventListener('mousedown', handleStart)
@@ -153,4 +177,17 @@ function handleEnd(ev) {
     gPen.pos = getEvPos(ev)
     gPen.isDown = false
     gCtx.closePath()
+}
+
+function getEvPos(ev) {
+    let pos = { x: ev.offsetX, y: ev.offsetY }
+    if (TOUCH_EVENTS.includes(ev.type)) {
+        ev.preventDefault()
+        ev = ev.changedTouches[0]
+        pos = {
+            x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
+        }
+    }
+    return pos
 }
