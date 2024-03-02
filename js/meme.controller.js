@@ -37,15 +37,20 @@ function drawImg(meme) {
 }
 
 function drawText(text, x, y, lineIndex) {
-    const color = getColor()
-    console.log(`Drawing text with color: ${color}`)
-
-    gCtx.fillStyle = color;
+    gCtx.fillStyle = getColor()
     gCtx.strokeStyle = 'black'
-    gCtx.font = `${getFontSize()}px impact, monospace`
-    gCtx.textAlign = 'center'
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
+    gCtx.font = `${getFontSize()}px ${getFontFamily() || 'impact'}, monospace`
+    gCtx.textAlign = `${getFontAlignment() || 'center'}`
+    let xPos = x;
+    let align = getFontAlignment()
+    if (align === 'left') {
+        xPos = 0
+    } else if (align === 'right') {
+        xPos = gElCanvas.width
+    }
+
+    gCtx.fillText(text, xPos, y);
+    gCtx.strokeText(text, xPos, y);
     const textWidth = gCtx.measureText(text).width
     const textHeight = parseInt(gCtx.font, 10)
     setLinePos(x, y, lineIndex, textWidth, textHeight)
@@ -83,11 +88,28 @@ function onAddLine() {
     renderMeme()
 }
 
+function onDeleteLine() {
+    deleteLine()
+    renderMeme()
+}
+
+
 function onSwitchLine() {
     switchLine()
     document.getElementById('meme-text-input').value = getText()
     renderMeme()
 }
+
+function onMoveLineUp() {
+    moveLineUp()
+    renderMeme()
+}
+
+function onMoveLineDown() {
+    moveLineDown()
+    renderMeme()
+}
+
 
 function onChangeColor(event) {
     const { value } = event.target
@@ -95,8 +117,18 @@ function onChangeColor(event) {
     renderMeme()
 }
 
-function onSetFont(el) {
+function onSetFontSize(el) {
     setFontSize(el)
+    renderMeme()
+}
+
+function onSetFontFamily(fontFamily) {
+    setFontFamily(fontFamily)
+    renderMeme()
+}
+
+function onSetTextAlign(align) {
+    setTextAlign(align)
     renderMeme()
 }
 

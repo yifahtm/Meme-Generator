@@ -95,6 +95,13 @@ function addLine() {
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
+function deleteLine() {
+    if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
+        gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+        gMeme.selectedLineIdx = gMeme.lines.length > 0 ? 0 : null
+    }
+}
+
 function setLinePos(x, y, lineIndex, textWidth, textHeight) {
     gMeme.lines[lineIndex].pos = {
         x: x - textWidth / 2,
@@ -110,14 +117,52 @@ function setLinePos(x, y, lineIndex, textWidth, textHeight) {
     // }
 }
 
+function moveLineUp() {
+    if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
+        gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
+    }
+}
+
+function moveLineDown() {
+    if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
+        gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+    }
+}
+
 function setFontSize(el) {
     console.log(el.classList)
-    if (el.classList.contains('increase')) gMeme.lines[0].size += 2
-    else if (el.classList.contains('decrease')) gMeme.lines[0].size -= 2
+    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    if (selectedLine) {
+        if (el.classList.contains('increase')) selectedLine.size += 2
+        else if (el.classList.contains('decrease')) selectedLine.size -= 2
+        else if (el.classList.contains('input-font-size')) selectedLine.size = el.value
+    }
+}
+
+function setFontFamily(fontFamily) {
+    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    if (selectedLine) {
+        selectedLine.fontFamily = fontFamily
+    }
+}
+
+function setTextAlign(align) {
+    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    if (selectedLine) {
+        selectedLine.align = align;
+    }
 }
 
 function getFontSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size
+}
+
+function getFontFamily() {
+    return gMeme.lines[gMeme.selectedLineIdx].fontFamily
+}
+
+function getFontAlignment() {
+    return gMeme.lines[gMeme.selectedLineIdx].align
 }
 
 function _setLineTxt(txt) {

@@ -45,9 +45,25 @@
                 <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
                     onchange="OnUpdateMeme(this.value)">
                 <button class="btn switch-line" onclick="onSwitchLine()">Switch Line</button>
+                <button class="btn move-up" onclick="onMoveLineUp()">Move Up</button>
+                <button class="btn move-down" onclick="onMoveLineDown()">Move Down</button>
+
                 <button class="btn add-line" onclick="onAddLine()">Add Line</button>
-                <button class="btn increase" onclick="onSetFont(this)">+</button>
-                <button class="btn decrease" onclick="onSetFont(this)">-</button>
+                <button class="btn delete-line" onclick="onDeleteLine()">Delete Line</button>
+                <button class="btn increase" onclick="onSetFontSize(this)">+</button>
+                <button class="btn decrease" onclick="onSetFontSize(this)">-</button>
+                <label>Text Alignment:</label>
+                <button onclick="onSetTextAlign('left')">Left</button>
+                <button onclick="onSetTextAlign('center')">Center</button>
+                <button onclick="onSetTextAlign('right')">Right</button>
+                <label for="font-family">Font Family:</label>
+                <select id="font-family" onchange="onSetFontFamily(this.value)">
+                    <option value="impact" selected>Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+                <label for="font-size">Font Size:</label>
+                <input type="number" class="input-font-size" id="font-size" value="20" onchange="onSetFontSize(this)" />
                 <input type="color" name="color-input" onchange="onChangeColor(event)">
                 <a href="#" onclick="onDownload(this)" download="my-canvas.jpg">Download canvas</a>
             </div>
