@@ -55,8 +55,8 @@ function changeColor(value) {
 
 function getColor() {
     const color = gMeme.lines[gMeme.selectedLineIdx].color;
-    console.log(`Getting color for line ${gMeme.selectedLineIdx}: ${color}`);
-    return color;
+    console.log(`Getting color for line ${gMeme.selectedLineIdx}: ${color}`)
+    return color
 }
 
 function getPenPos() {

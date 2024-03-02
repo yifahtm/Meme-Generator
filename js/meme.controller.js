@@ -41,7 +41,7 @@ function drawText(text, x, y, lineIndex) {
     gCtx.strokeStyle = 'black'
     gCtx.font = `${getFontSize()}px ${getFontFamily() || 'impact'}, monospace`
     gCtx.textAlign = `${getFontAlignment() || 'center'}`
-    let xPos = x;
+    let xPos = x
     let align = getFontAlignment()
     if (align === 'left') {
         xPos = 0
@@ -49,8 +49,8 @@ function drawText(text, x, y, lineIndex) {
         xPos = gElCanvas.width
     }
 
-    gCtx.fillText(text, xPos, y);
-    gCtx.strokeText(text, xPos, y);
+    gCtx.fillText(text, xPos, y)
+    gCtx.strokeText(text, xPos, y)
     const textWidth = gCtx.measureText(text).width
     const textHeight = parseInt(gCtx.font, 10)
     setLinePos(x, y, lineIndex, textWidth, textHeight)

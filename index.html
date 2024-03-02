@@ -15,8 +15,9 @@
             <div class="logo">Meme Generator<span>.</span></div>
             <nav class="main-nav">
                 <ul class="main-nav-list flex align-center  clean-list">
-                    <li class="flex align-center justify-center"><a href="#gallery">Gallery</a></li>
-                    <li class="flex align-center justify-center"><a href="#">About</a></li>
+                    <li class="btn btn-gallery flex align-center justify-center" onclick="onToggleHidden(this)"><a
+                            href="#gallery">Gallery</a></li>
+                    <li class=" btn btn-about flex align-center justify-center"><a href="#">About</a></li>
             </nav>
         </div>
     </header>
@@ -34,7 +35,7 @@
             </div>
             <div class="results-container flex space-between align-center justify-center wrap"></div>
         </section>
-        <section class="editor-container flex space-between ">
+        <section class="editor-container flex space-between hidden ">
             <div class="canvas-container">
                 <div class="meme-display">
                     <canvas width="500" height="500"></canvas>
