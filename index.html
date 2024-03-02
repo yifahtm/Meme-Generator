@@ -19,12 +19,15 @@
                             href="#gallery">Gallery</a></li>
                     <li class=" btn btn-about flex align-center justify-center"><a href="#">About</a></li>
             </nav>
+            <div class="hamburger-menu" onclick="onToggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
     </header>
     <main class="main-content">
         <section id="gallery" class="gallery-container">
             <div class="search-bar flex align-center space-between">
-                <input type="search" id="search" name="search" placeholder="Search">
+                <input type="search" class="search" name="search" placeholder="Search">
                 <div class="popular-suggestions">
                     <span>Funny</span>
                     <span>Happy</span>
@@ -42,7 +45,7 @@
                 </div>
             </div>
             <div class="controlls flex space-between align-center">
-                <input type="text" class="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
+                <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
                     onchange="OnUpdateMeme(this.value)">
                 <div class="line-btns ">
                     <button class="btn switch-line" onclick="onSwitchLine()"><i class="fa-solid fa-arrow-up"></i> <i
@@ -92,6 +95,7 @@
     <footer class="main-footer full">Yifaht Meir</footer>
     <script src="js\utils.service.js"></script>
     <script src="js\storage.service.js"></script>
+    <script src="js\event-listeners.service.js"></script>
     <script src="js\meme.service.js.js"></script>
     <script src="js\gallery.controller.js"></script>
     <script src="js\meme.controller.js"></script>

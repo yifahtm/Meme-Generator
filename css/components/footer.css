@@ -1,9 +1,11 @@
 .main-footer {
+    grid-column: 1 / -1;
+    width: 100%;
     border-block-start: 1px solid lightgrey;
     background-color: hwb(0 97% 3%);
-}
-
-.footer-text {
+    padding: 10px 5px;
+    text-align: center;
     margin-block-end: 45px;
     font-size: 26px;
+    color: #353d52;
 }
