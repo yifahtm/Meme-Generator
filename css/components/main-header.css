@@ -1,0 +1,21 @@
+.main-header {
+    background-image: linear-gradient(to right, hwb(195 16% 13%), rgb(37, 173, 132));
+    border-radius: 70px;
+    padding: 10px
+}
+
+.logo {
+    font-family: eurofurence, sans-serif;
+    font-size: 2.142857em
+}
+
+
+/* Nav-list */
+.main-nav-list li {
+    width: 133px;
+    transition: 0.5s;
+}
+
+.main-header .logo {
+    color: whitesmoke;
+}

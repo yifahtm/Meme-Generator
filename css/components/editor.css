@@ -1,0 +1,101 @@
+.editor-container {
+    gap: 87px;
+}
+
+.editor-container>* {
+    border-radius: 20px;
+    background-color: hwb(220 22% 61%);
+    margin-top: 20px;
+}
+
+canvas {
+    font-family: impact, monospace;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    margin: 5px
+}
+
+.canvas-container {
+    width: 80vw;
+}
+
+.controlls {
+    flex-direction: column;
+}
+
+.controlls>* {
+    border-radius: 7px;
+    padding: 10px;
+    margin: 20px 36px
+}
+
+.meme-text-input {
+    display: block;
+    width: 80%;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 1em;
+    padding: 17px;
+    border-radius: 50px;
+}
+
+.line-btns>* {
+    border-radius: 7px;
+}
+
+.switch-line {
+    background-color: #00ccff;
+}
+
+.move-up {
+    background-color: hwb(281 2% 18%);
+}
+
+.move-down {
+    background-color: hwb(281 2% 18%);
+}
+
+.add-line {
+    background-color: hsl(152, 96%, 42%);
+}
+
+.delete-line {
+    background-color: hsl(8, 86%, 59%);
+}
+
+.txt-controlls {
+    background-color: #00ccff;
+}
+
+.txt-controlls>* {
+    background-color: whitesmoke;
+    color: hsl(0, 0%, 17%);
+    padding: 14px;
+    border-radius: 7px;
+}
+
+.txt-controlls input,
+select {
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.ext-actions>* {
+    border-radius: 10px;
+    padding: 14px;
+    margin-inline: 16px
+}
+
+.btn-upload {
+    background-color: hwb(152 1% 33%);
+}
+
+.btn-share {
+    background-color: hsl(232, 92%, 54%);
+}
+
+.btn-download {
+    background-color: #b772f7;
+}

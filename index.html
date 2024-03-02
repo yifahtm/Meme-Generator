@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\main.css">
+    <script src="https://kit.fontawesome.com/f2a823370b.js" crossorigin="anonymous"></script>
     <title>Meme Generator</title>
 </head>
 
-<body onload="onInit()">
+<body class="main-layout" onload="onInit()">
     <header class="main-header full main-layout">
         <div class="header-content flex space-between align-center">
             <div class="logo">Meme Generator<span>.</span></div>
@@ -19,58 +20,75 @@
             </nav>
         </div>
     </header>
-    <main>
+    <main class="main-content">
         <section id="gallery" class="gallery-container">
-            <div class="search-bar">
-                <label for="search">Search:</label>
-                <input type="search" id="search" name="search" placeholder="funny baby">
+            <div class="search-bar flex align-center space-between">
+                <input type="search" id="search" name="search" placeholder="Search">
                 <div class="popular-suggestions">
                     <span>Funny</span>
                     <span>Happy</span>
                     <span>Love</span>
                     <span>Baby</span>
                 </div>
-                <button>More</button>
+                <button class="btn btn-more">More</button>
             </div>
-            <div class="results-container"></div>
+            <div class="results-container flex space-between align-center justify-center wrap"></div>
         </section>
-        <section class="editor-container">
+        <section class="editor-container flex space-between ">
             <div class="canvas-container">
                 <div class="meme-display">
                     <canvas width="500" height="500"></canvas>
                 </div>
             </div>
-            <div class="controlls">
-                <label for="meme-text-input">Text:</label>
-                <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
+            <div class="controlls flex space-between align-center">
+                <input type="text" class="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
                     onchange="OnUpdateMeme(this.value)">
-                <button class="btn switch-line" onclick="onSwitchLine()">Switch Line</button>
-                <button class="btn move-up" onclick="onMoveLineUp()">Move Up</button>
-                <button class="btn move-down" onclick="onMoveLineDown()">Move Down</button>
+                <div class="line-btns ">
+                    <button class="btn switch-line" onclick="onSwitchLine()"><i class="fa-solid fa-arrow-up"></i> <i
+                            class="fa-solid fa-arrow-down"></i></button>
+                    <button class="btn move-up" onclick="onMoveLineUp()"><i class="fa-solid fa-arrow-up"></i></button>
+                    <button class="btn move-down" onclick="onMoveLineDown()"><i
+                            class="fa-solid fa-arrow-down"></i></button>
 
-                <button class="btn add-line" onclick="onAddLine()">Add Line</button>
-                <button class="btn delete-line" onclick="onDeleteLine()">Delete Line</button>
-                <button class="btn increase" onclick="onSetFontSize(this)">+</button>
-                <button class="btn decrease" onclick="onSetFontSize(this)">-</button>
-                <label>Text Alignment:</label>
-                <button onclick="onSetTextAlign('left')">Left</button>
-                <button onclick="onSetTextAlign('center')">Center</button>
-                <button onclick="onSetTextAlign('right')">Right</button>
-                <label for="font-family">Font Family:</label>
-                <select id="font-family" onchange="onSetFontFamily(this.value)">
-                    <option value="impact" selected>Impact</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Verdana">Verdana</option>
-                </select>
-                <label for="font-size">Font Size:</label>
-                <input type="number" class="input-font-size" id="font-size" value="20" onchange="onSetFontSize(this)" />
-                <input type="color" name="color-input" onchange="onChangeColor(event)">
-                <a href="#" onclick="onDownload(this)" download="my-canvas.jpg">Download canvas</a>
+                    <button class="btn add-line" onclick="onAddLine()"><i class="fa-solid fa-plus"></i></button>
+                    <button class="btn delete-line" onclick="onDeleteLine()"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="txt-controlls">
+                    <button class="btn increase" onclick="onSetFontSize(this)"><i class="fa-solid fa-a"></i> +</button>
+                    <button class="btn decrease" onclick="onSetFontSize(this)"><i class="fa-solid fa-a"></i> -</button>
+                    <button class="btn left-align" onclick="onSetTextAlign('left')"><i
+                            class="fa-solid fa-align-left"></i></button>
+                    <button class="btn centert-align" onclick="onSetTextAlign('center')"><i
+                            class="fa-solid fa-align-center"></i></button>
+                    <button class="btn right-align" onclick="onSetTextAlign('right')"><i
+                            class="fa-solid fa-align-right"></i></button>
+                    <select class="font-family" onchange="onSetFontFamily(this.value)">
+                        <option value="impact" selected>Impact</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                    </select>
+                    <label for="font-size">Font Size:</label>
+                    <input type="number" class="input-font-size" id="font-size" value="20"
+                        onchange="onSetFontSize(this)" />
+                    <button class="btn btn-color"><input type="color" name="color-input"
+                            onchange="onChangeColor(event)">
+                        <i class="fa-solid fa-palette"></i></button>
+                </div>
+                <div class="ext-actions flex space-between">
+                    <a class="btn btn-upload" href="#" onclick="onDownload(this)" download="my-canvas.jpg"><i
+                            class="fa-solid fa-arrow-up-from-bracket"></i> Upload</a>
+                    <a class="btn btn-share" href="#" onclick="onDownload(this)" download="my-canvas.jpg"><i
+                            class="fa-solid fa-share-nodes"></i> Share</a>
+                    <a class="btn btn-download" href="#" onclick="onDownload(this)" download="my-canvas.jpg"><i
+                            class="fa-solid fa-cloud-arrow-down"></i> Download</a>
+                </div>
             </div>
             </div>
         </section>
     </main>
-    <footer>Yifaht Meir</footer>
+    <footer class="main-footer full">Yifaht Meir</footer>
     <script src="js\utils.service.js"></script>
     <script src="js\storage.service.js"></script>
     <script src="js\meme.service.js.js"></script>

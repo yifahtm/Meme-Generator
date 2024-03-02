@@ -6,7 +6,7 @@
 
 function renderGallery() {
     const imgs = getImgs()
-    let strHtmls = imgs.slice(0).map(img => `<img src="${img.url}" alt="Meme Image" class="gallery-img" onclick="onImgSelect(${img.id})">`
+    let strHtmls = imgs.slice(0).map(img => `<img src="${img.url}" alt="Meme Image" class="gallery-img flex wrap" onclick="onImgSelect(${img.id})">`
     ).join('')
     document.querySelector(".results-container").innerHTML = strHtmls
 }

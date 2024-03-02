@@ -1,0 +1,9 @@
+.main-footer {
+    border-block-start: 1px solid lightgrey;
+    background-color: hwb(0 97% 3%);
+}
+
+.footer-text {
+    margin-block-end: 45px;
+    font-size: 26px;
+}

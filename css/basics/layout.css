@@ -1,0 +1,28 @@
+/* Main Layout */
+.main-layout {
+    display: grid;
+    grid-template-rows: minmax(1fr, 72px, ) minmax(1fr, 72px, ) 1fr 1fr minmax(1fr, 72px, );
+    grid-template-columns: 67px 1fr 67px;
+}
+
+.main-layout>*:not(.full) {
+    grid-column: 2;
+}
+
+.main-layout>*.full {
+    grid-column: 1 / -1;
+}
+
+.gallery-container .search-bar {
+    grid-column: 2/-2;
+}
+
+.gallery-container .results-container {
+    grid-column: 2/-2;
+    grid-row: 3/4;
+}
+
+.editor-container {
+    grid-column: 2/-2;
+    grid-row: 4/5;
+}
