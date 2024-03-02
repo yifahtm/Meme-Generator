@@ -42,7 +42,7 @@ function drawText(text, x, y, lineIndex) {
 
     gCtx.fillStyle = color;
     gCtx.strokeStyle = 'black'
-    gCtx.font = `${getFontSize()}px Arial`
+    gCtx.font = `${getFontSize()}px impact, monospace`
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
