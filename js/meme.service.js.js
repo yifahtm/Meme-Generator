@@ -55,12 +55,6 @@ function changeColor(value) {
     gMeme.lines[gMeme.selectedLineIdx].color = value
 }
 
-function getColor() {
-    const color = gMeme.lines[gMeme.selectedLineIdx].color;
-    console.log(`Getting color for line ${gMeme.selectedLineIdx}: ${color}`)
-    return color
-}
-
 function getPenPos() {
     return gPen
 }
@@ -111,12 +105,6 @@ function setLinePos(x, y, lineIndex, textWidth, textHeight) {
         width: textWidth,
         height: textHeight
     }
-    // gMeme.lines.forEach((line, pos))=> {
-    //     line.pos.x = x - textWidth / 2
-    //     line.pos.y = y - textHeight / 2
-    //     line.pos.width = textWidth
-    //     line.pos.height = textHeight
-    // }
 }
 
 function moveLineUp() {
@@ -156,18 +144,6 @@ function setTextAlign(align) {
     if (selectedLine) {
         selectedLine.align = align;
     }
-}
-
-function getFontSize() {
-    return gMeme.lines[gMeme.selectedLineIdx].size
-}
-
-function getFontFamily() {
-    return gMeme.lines[gMeme.selectedLineIdx].fontFamily
-}
-
-function getFontAlignment() {
-    return gMeme.lines[gMeme.selectedLineIdx].align
 }
 
 function _setLineTxt(txt) {

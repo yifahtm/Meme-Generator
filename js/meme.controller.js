@@ -56,29 +56,29 @@ function drawText(line, x, y, lineIndex) {
     const textWidth = gCtx.measureText(line.txt).width
     const textHeight = parseInt(gCtx.font, 10)
     setLinePos(x, y, lineIndex, textWidth, textHeight)
-    // const selectedIdx = getSelectedIdx()
-    // if (lineIndex === selectedIdx) {
-    //     drawRectangleAroundText(text, x, y)
-    // }
+    const selectedIdx = getSelectedIdx()
+    if (lineIndex === selectedIdx) {
+        drawRectangleAroundText(line.txt, x, y)
+    }
 }
 
-// function drawRectangleAroundText(text, x, y) {
-//     const measurements = gCtx.measureText(text)
-//     const textWidth = measurements.width
-//     const fontSize = parseInt(gCtx.font, 10)
-//     const padding = 10
+function drawRectangleAroundText(text, x, y) {
+    const measurements = gCtx.measureText(text)
+    const textWidth = measurements.width
+    const fontSize = parseInt(gCtx.font, 10)
+    const padding = 10
 
 
-//     const rectX = x - textWidth / 2 - padding
-//     const rectY = y - fontSize / 2 - padding
-//     const rectWidth = textWidth + 2 * padding
-//     const rectHeight = fontSize + 2 * padding
-//     gCtx.beginPath()
-//     gCtx.rect(rectX, rectY, rectWidth, rectHeight)
-//     gCtx.strokeStyle = 'lightgrey'
-//     gCtx.lineWidth = 2
-//     gCtx.stroke()
-// }
+    const rectX = x - textWidth / 2 - padding
+    const rectY = y - fontSize / 2 - padding
+    const rectWidth = textWidth + 2 * padding
+    const rectHeight = fontSize + 2 * padding
+    gCtx.beginPath()
+    gCtx.rect(rectX, rectY, rectWidth, rectHeight)
+    gCtx.strokeStyle = 'lightgrey'
+    gCtx.lineWidth = 2
+    gCtx.stroke()
+}
 
 function OnUpdateMeme(txt) {
     updateMeme(txt)
@@ -102,8 +102,8 @@ function onSwitchLine() {
     renderMeme()
 }
 
-function onMoveLineUp() {
-    moveLineUp()
+function onMoveLine(dir) {
+    moveLine(dir)
     renderMeme()
 }
 
