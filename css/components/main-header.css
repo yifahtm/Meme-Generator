@@ -1,7 +1,7 @@
 .main-header {
-    background-image: linear-gradient(to right, hwb(195 16% 13%), rgb(37, 173, 132));
+    background-image: linear-gradient(to right, var(--color-fourth), rgb(37, 173, 132));
     border-radius: 4.375rem;
-    padding: 0.625rem
+    padding: var(--sm)
 }
 
 .logo {

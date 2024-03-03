@@ -1,0 +1,24 @@
+:root {
+    /* Core Colors */
+    --color-primary: hsl(221, 28%, 24%);
+    --color-secondary: whitesmoke;
+    --color-third: hwb(220 22% 61%);
+    --color-fourth: hwb(195 16% 13%);
+    --color-border: lightgrey;
+
+    /* Font & Text */
+    --font-main: Arial, Helvetica, sans-serif;
+    --font-size-base: 1em;
+    /* Spacing */
+    --xs: 0.3125rem;
+    --sm: 0.625rem;
+    --md: 1.25rem;
+    --lg: 1.875rem;
+    --xl: 2.5rem;
+    --xxl: 3.125rem;
+    /* Border & Radius */
+    --radius-sm: 0.4375rem;
+    --radius-md: 1.25rem;
+
+    --border-width: 0.0625rem;
+}

@@ -1,6 +1,6 @@
 .gallery-container {
-    background-color: hwb(220 22% 61%);
-    border-radius: 0.3125rem;
+    background-color: var(--color-third);
+    border-radius: var(--xxl);
 }
 
 .search-bar {
@@ -8,34 +8,34 @@
 }
 
 .search-bar input {
-    background-color: hsl(214, 13%, 25%);
+    background-color: var(--color-primary);
     color: #879eb8;
-    padding: 0.9375rem 2.625rem;
-    font-size: 1em;
+    padding: 0.9375rem var(--xl);
+    font-size: var(--font-size-base);
     font-weight: bold;
-    border-radius: 3.125rem;
+    border-radius: var(--xxl);
 }
 
 .search-bar .popular-suggestions {
     background-color: #95aac2;
-    padding: 0.625rem 2.3125rem;
-    border-radius: 3.125rem;
+    padding: var(--sm) 2.3125rem;
+    border-radius: var(--xxl);
 }
 
 .search-bar .btn-more {
-    background-image: linear-gradient(to right, hwb(195 16% 13%), rgb(37, 173, 132));
+    background-image: linear-gradient(to right, var(--color-fourth), rgb(37, 173, 132));
     border-radius: 4.375rem;
-    padding: 0.625rem 1.25rem
+    padding: var(--sm) var(--md)
 }
 
 .results-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-flow: row;
-    grid-gap: 1.25rem;
+    grid-gap: var(--md);
     grid-row-gap: 1.6875rem;
     width: 100%;
-    padding: 2.5rem
+    padding: var(--xl)
 }
 
 .results-container img {

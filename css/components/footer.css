@@ -1,11 +1,11 @@
 .main-footer {
     grid-column: 1 / -1;
     width: 100%;
-    border-block-start: 0.0625rem solid lightgrey;
-    background-color: hwb(0 97% 3%);
-    padding: 0.625rem 0.3125rem;
+    border-block-start: var(--sm) solid var(--color-border);
+    background-color: var(--color-border);
+    padding: var(--sm) var(--xs);
     text-align: center;
     margin-block-end: 2.8125rem;
     font-size: 1rem;
-    color: #353d52;
+    color: var(--color-third);
 }

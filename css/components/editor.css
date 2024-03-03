@@ -3,17 +3,17 @@
 }
 
 .editor-container>* {
-    border-radius: 1.25rem;
-    background-color: hwb(220 22% 61%);
-    margin-top: 1.25rem;
+    border-radius: var(--md);
+    background-color: var(--color-third);
+    margin-top: var(--md);
 }
 
 canvas {
     font-family: impact, monospace;
-    background-color: white;
-    border: 0.0625rem solid lightgray;
-    border-radius: 1.25rem;
-    margin: 0.3125rem
+    background-color: var(--color-secondary);
+    border: var(--sm) solid var(--color-border);
+    border-radius: var(--md);
+    margin: var(--xxl)
 }
 
 .canvas-container {
@@ -25,27 +25,27 @@ canvas {
 }
 
 .controlls>* {
-    border-radius: 0.4375rem;
-    padding: 0.625rem;
-    margin: 1.25rem 2.25rem
+    border-radius: var(--xs);
+    padding: var(--sm);
+    margin: var(--md) 2.25rem
 }
 
 .meme-text-input {
     display: block;
     width: 80%;
-    background-color: whitesmoke;
+    background-color: var(--color-secondary);
     text-align: center;
-    font-size: 1em;
+    font-size: var(--font-size-base);
     padding: 1.0625rem;
-    border-radius: 3.125rem;
+    border-radius: var(--xxl);
 }
 
 .line-btns>* {
-    border-radius: 0.4375rem;
+    border-radius: var(--xs);
 }
 
 .switch-line {
-    background-color: #00ccff;
+    background-color: var(--color-fourth);
 }
 
 .move-up {
@@ -65,25 +65,25 @@ canvas {
 }
 
 .txt-controlls {
-    background-color: #00ccff;
+    background-color: var(--color-fourth);
 }
 
 .txt-controlls>* {
-    background-color: whitesmoke;
-    color: hsl(0, 0%, 17%);
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     padding: 0.875rem;
-    border-radius: 0.4375rem;
+    border-radius: var(--xs);
 }
 
 .txt-controlls input,
 select {
     font-weight: bold;
-    font-size: 1em;
+    font-size: var(--font-size-base);
     text-transform: uppercase;
 }
 
 .ext-actions>* {
-    border-radius: 0.625rem;
+    border-radius: var(--sm);
     padding: 0.875rem;
     margin-inline: 1rem
 }
