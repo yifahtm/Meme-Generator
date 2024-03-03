@@ -17,6 +17,8 @@
                 <ul class="main-nav-list flex align-center  clean-list">
                     <li class="btn btn-gallery flex align-center justify-center" onclick="onToggleHidden(this)"><a
                             href="#gallery">Gallery</a></li>
+                    <li class="btn btn-saved-memes flex align-center justify-center" onclick="onToggleHidden(this)"><a
+                            href="#saved-memes">Saved Memes</a></li>
                     <li class=" btn btn-about flex align-center justify-center"><a href="#">About</a></li>
             </nav>
             <div class="hamburger-menu" onclick="onToggleMenu()">
@@ -36,6 +38,8 @@
                 </div>
                 <button class="btn btn-more">More</button>
             </div>
+            <section id="saved-memes" class="saved-memes-container hidden">
+            </section>
             <div class="results-container flex space-between align-center justify-center wrap"></div>
         </section>
         <section class="editor-container flex space-between hidden ">
@@ -81,12 +85,16 @@
                         <i class="fa-solid fa-palette"></i></button>
                 </div>
                 <div class="ext-actions flex space-between">
-                    <a class="btn btn-upload" href="#" onclick="onDownload(this)" download="my-canvas.jpg"><i
-                            class="fa-solid fa-arrow-up-from-bracket"></i> Upload</a>
+                    <!-- <a class="btn btn-upload" href="#" onclick="onUpload(event)"><i
+                            class="fa-solid fa-arrow-up-from-bracket"></i> Upload</a> -->
+
+                    <input type="file" class="btn btn-upload" name="file-input" onchange="onUpload(event)"></input>
+
                     <a class="btn btn-share" href="#" onclick="onDownload(this)" download="my-canvas.jpg"><i
                             class="fa-solid fa-share-nodes"></i> Share</a>
                     <a class="btn btn-download" href="#" onclick="onDownload(this)" download="my-canvas.jpg"><i
                             class="fa-solid fa-cloud-arrow-down"></i> Download</a>
+                    <button class="btn btn-save-meme">Save</button>
                 </div>
             </div>
             </div>

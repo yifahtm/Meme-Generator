@@ -38,6 +38,7 @@ let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 let gPen = { pos: null, isDown: false }
 let gLine = []
 let gColor = 'white'
+let savedMemes = []
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 
 function getMeme() {
@@ -173,3 +174,19 @@ function setImg(imgId) {
     gMeme.selectedImgId = imgId
 }
 
+function saveMemes() {
+    savedMemes = loadFromStorage('savedMemes') || []
+    // let memeToSave = JSON.parse(JSON.stringify(gMeme))
+    let memeToSave = gMeme
+    savedMemes.push(memeToSave)
+    saveToStorage('savedMemes', savedMemes)
+}
+
+function loadMemes() {
+    return loadFromStorage('savedMemes') || []
+}
+
+function editSavedMeme(index) {
+    const savedMemes = loadMemes()
+    gMeme = savedMemes[index]
+}
