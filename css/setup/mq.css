@@ -1,5 +1,5 @@
 /* Mobile */
-@media (max-width: 53.75rem) {
+@media (max-width: 47.5rem) {
   .main-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -117,5 +117,15 @@
   .main-footer {
     padding: var(--sm) var(--xs);
     text-align: center;
+  }
+}
+
+.main-footer .logo {
+  display: none;
+}
+
+@media (min-width: 47.5rem) {
+  .main-footer .logo {
+    display: block;
   }
 }

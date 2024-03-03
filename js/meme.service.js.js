@@ -111,7 +111,7 @@ function setLinePos(x, y, lineIndex, textWidth, textHeight) {
 
 function moveLine(dir) {
     const line = getCurrLine()
-    line.y += dirs
+    line.y += dir
 }
 
 // function moveLine(dir) {

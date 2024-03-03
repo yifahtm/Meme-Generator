@@ -40,7 +40,7 @@ a {
 a:hover,
 .btn:hover {
     text-decoration: none;
-    color: var(--color-accent);
+    color: var(--color-fourth);
     background-color: var(--color-secondary);
     border-radius: var(--xs);
     padding: var(--sm)
