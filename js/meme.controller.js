@@ -31,27 +31,29 @@ function drawImg(meme) {
             } else {
                 yPosition = 50 + (index * 60)
             }
-            drawText(line.txt, gElCanvas.width / 2, yPosition, index)
+
+            drawText(line, gElCanvas.width / 2, yPosition, index)
         })
     }
 }
 
-function drawText(text, x, y, lineIndex) {
-    gCtx.fillStyle = getColor()
+function drawText(line, x, y, lineIndex) {
+    console.log('line', line)
+    gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
-    gCtx.font = `${getFontSize()}px ${getFontFamily() || 'impact'}, monospace`
-    gCtx.textAlign = `${getFontAlignment() || 'center'}`
+    gCtx.font = `${line.size}px ${line.fontFamily || 'impact'}, monospace`
+    gCtx.textAlign = `${line.align || 'center'}`
     let xPos = x
-    let align = getFontAlignment()
+    let align = line.align
     if (align === 'left') {
         xPos = 0
     } else if (align === 'right') {
         xPos = gElCanvas.width
     }
 
-    gCtx.fillText(text, xPos, y)
-    gCtx.strokeText(text, xPos, y)
-    const textWidth = gCtx.measureText(text).width
+    gCtx.fillText(line.txt, xPos, y)
+    gCtx.strokeText(line.txt, xPos, y)
+    const textWidth = gCtx.measureText(line.txt).width
     const textHeight = parseInt(gCtx.font, 10)
     setLinePos(x, y, lineIndex, textWidth, textHeight)
     // const selectedIdx = getSelectedIdx()
@@ -117,8 +119,8 @@ function onChangeColor(event) {
     renderMeme()
 }
 
-function onSetFontSize(el) {
-    setFontSize(el)
+function onSetFontSize(el, diff) {
+    setFontSize(el, diff)
     renderMeme()
 }
 

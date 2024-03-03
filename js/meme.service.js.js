@@ -14,8 +14,9 @@ let gImgs = [
     { id: 15, url: 'img/one size/15.jpg', keywords: ['interesting', 'man'] },
     { id: 16, url: 'img/one size/16.jpg', keywords: ['funny', 'man'] },
     { id: 17, url: 'img/one size/17.jpg', keywords: ['interesting', 'man'] },
-    { id: 18, url: 'img/one size/18.jpg', keywords: ['funny', 'toy'] },
+    { id: 18, url: 'img/one size/18.jpg', keywords: ['funny', 'toy'] }
 ]
+
 let gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
@@ -130,9 +131,12 @@ function moveLineDown() {
     }
 }
 
-function setFontSize(el) {
+function setFontSize(el, diff) {
     console.log(el.classList)
     const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    // console.log('selectedLine', selectedLine);
+    // selectedLine.size += diff
+    // console.log('gMeme', gMeme);
     if (selectedLine) {
         if (el.classList.contains('increase')) selectedLine.size += 2
         else if (el.classList.contains('decrease')) selectedLine.size -= 2
