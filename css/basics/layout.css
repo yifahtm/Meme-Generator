@@ -1,8 +1,8 @@
 /* Main Layout */
 .main-layout {
     display: grid;
-    grid-template-rows: minmax(1fr, 72px, ) minmax(1fr, 72px, ) 1fr 1fr minmax(1fr, 72px, );
-    grid-template-columns: 67px 1fr 67px;
+    grid-template-rows: minmax(1fr, 4.5rem, ) minmax(1fr, 4.5rem, ) 1fr 1fr minmax(1fr, 4.5rem, );
+    grid-template-columns: 4.1875rem 1fr 4.1875rem;
 }
 
 .main-layout>*:not(.full) {
