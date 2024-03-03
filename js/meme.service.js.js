@@ -24,12 +24,12 @@ let gMeme = {
         {
             txt: 'CAN\'T GET FIRED',
             size: 20,
-            color: 'white'
+            color: 'white',
         },
         {
             txt: 'IF YOU DONT HAVE A JOB',
             size: 20,
-            color: 'white'
+            color: 'white',
         },
     ]
 }
@@ -85,7 +85,8 @@ function addLine() {
     const newLine = {
         txt: 'New Line',
         size: 20,
-        color: 'white'
+        color: 'white',
+        pos: { x: 0, y: 50, width: 0, height: 0 }
     }
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
@@ -107,17 +108,35 @@ function setLinePos(x, y, lineIndex, textWidth, textHeight) {
     }
 }
 
-function moveLineUp() {
-    if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
-        gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
-    }
+
+function moveLine(dir) {
+    const line = getCurrLine()
+    line.y += dirs
 }
 
-function moveLineDown() {
-    if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
-        gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
-    }
-}
+// function moveLine(dir) {
+//     console.log(gMeme.lines[gMeme.selectedLineIdx].line.pos)
+//     if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
+//         const line = gMeme.lines[gMeme.selectedLineIdx]
+//         if (dir === 'up') {
+//             line.pos.y -= 10
+//         } else if (dir === 'down') {
+//             line.pos.y += 10
+//         }
+//     }
+// }
+
+// function moveLine(dir) {
+//     if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
+//         gMeme.lines[gMeme.selectedLineIdx].pos.y = dir === 'up' ? +10 : -10
+//     }
+// }
+
+// function moveLineDown() {
+//     if (gMeme.lines.length > 0 && gMeme.selectedLineIdx !== null) {
+//         gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+//     }
+// }
 
 function setFontSize(el, diff) {
     console.log(el.classList)

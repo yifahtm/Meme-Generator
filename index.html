@@ -50,13 +50,22 @@
             </div>
             <div class="controlls flex space-between align-center">
                 <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
-                    onchange="OnUpdateMeme(this.value)">
+                    oninput="OnUpdateMeme(this.value)">
                 <div class="line-btns ">
                     <button class="btn switch-line" onclick="onSwitchLine()"><i class="fa-solid fa-arrow-up"></i> <i
                             class="fa-solid fa-arrow-down"></i></button>
-                    <button class="btn move-up" onclick="onMoveLine('up')"><i class="fa-solid fa-arrow-up"></i></button>
+
+                    <button title="Move up" class="btn move-up" data-dir="-1" onclick="onMoveLine(this.dataset)">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+
+                    <button title="Move down" class="btn move-down" data-dir="1" onclick="onMoveLine(this.dataset)">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+
+                    <!-- <button class="btn move-up" onclick="onMoveLine('up')"><i class="fa-solid fa-arrow-up"></i></button>
                     <button class="btn move-down" onclick="onMoveLine('down')"><i
-                            class="fa-solid fa-arrow-down"></i></button>
+                            class="fa-solid fa-arrow-down"></i></button> -->
 
                     <button class="btn add-line" onclick="onAddLine()"><i class="fa-solid fa-plus"></i></button>
                     <button class="btn delete-line" onclick="onDeleteLine()"><i class="fa-solid fa-trash"></i></button>
@@ -82,8 +91,7 @@
                     <label for="font-size">Font Size:</label>
                     <input type="number" class="input-font-size" id="font-size" value="20"
                         onchange="onSetFontSize(this)" />
-                    <button class="btn btn-color"><input type="color" name="color-input"
-                            onchange="onChangeColor(event)">
+                    <button class="btn btn-color"><input type="color" name="color-input" oninput="onChangeColor(event)">
                         <i class="fa-solid fa-palette"></i></button>
                 </div>
                 <div class="ext-actions flex space-between">

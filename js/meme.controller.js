@@ -103,14 +103,14 @@ function onSwitchLine() {
 }
 
 function onMoveLine(dir) {
-    moveLine(dir)
+    moveLine(+dir)
     renderMeme()
 }
 
-function onMoveLineDown() {
-    moveLineDown()
-    renderMeme()
-}
+// function onMoveLineDown() {
+//     moveLineDown()
+//     renderMeme()
+// }
 
 
 function onChangeColor(event) {
