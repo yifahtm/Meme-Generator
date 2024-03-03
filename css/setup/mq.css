@@ -1,5 +1,5 @@
 /* Mobile */
-@media (max-width: 47.5rem) {
+@media (max-width: 50.5rem) {
   .main-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -29,17 +29,21 @@
   }
 
   .main-nav {
-    display: none;
+    display: block;
     position: fixed;
-    top: 4.375rem;
-    left: 0;
-    width: 100%;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
     background-color: var(--color-secondary);
-    z-index: 10;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    z-index: 20;
   }
 
   body.menu-open .main-nav {
     display: block;
+    width: 35vw;
   }
 
   .main-nav ul {
@@ -50,7 +54,22 @@
   .main-nav li {
     border-bottom: 1px solid var(--color-border);
     text-align: center;
-    padding: var(--sm) 0
+    padding: var(--sm) 0;
+  }
+
+  .main-screen {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s;
+  }
+
+  body.menu-open .main-screen {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
   }
 
   .logo {
@@ -66,6 +85,7 @@
 
   .gallery-container {
     flex-direction: column;
+    margin: auto
   }
 
   .search-bar {
@@ -97,12 +117,30 @@
 
   .editor-container {
     flex-direction: column;
+    margin: auto;
     gap: var(--md);
   }
 
   .canvas-container,
   .controlls {
     width: 100%;
+  }
+
+  .meme-text-input {
+    width: 0.8em
+  }
+
+  .line-btns,
+  .txt-controlls,
+  .ext-actions {
+    display: flex;
+    gap: var(--md)
+  }
+
+  .txt-controlls {
+    flex-direction: row;
+    width: fit-content;
+    gap: var(--md)
   }
 
   .search-bar,
@@ -124,7 +162,7 @@
   display: none;
 }
 
-@media (min-width: 47.5rem) {
+@media (min-width: 50.5rem) {
   .main-footer .logo {
     display: block;
   }

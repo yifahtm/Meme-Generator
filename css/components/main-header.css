@@ -13,7 +13,6 @@
     color: green;
 }
 
-
 /* Nav-list */
 .main-nav-list li {
     width: 8.3125rem;
@@ -21,5 +20,5 @@
 }
 
 .main-header .logo {
-    color: whitesmoke;
+    color: var(--color-secondary);
 }

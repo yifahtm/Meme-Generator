@@ -43,11 +43,12 @@ a:hover,
     color: var(--color-fourth);
     background-color: var(--color-secondary);
     border-radius: var(--xs);
-    padding: var(--sm)
+    padding: var(--md)
 }
 
 a:hover,
 .btn,
+.main-screen,
 input {
     cursor: pointer;
 }

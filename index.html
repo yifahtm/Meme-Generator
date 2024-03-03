@@ -10,6 +10,7 @@
 </head>
 
 <body class="main-layout" onload="onInit()">
+    <div class="main-screen" onclick="onToggleMenu()"></div>
     <header class="main-header full main-layout">
         <div class="header-content flex space-between align-center">
             <div class="logo">Meme Generator<span>.</span></div>
@@ -49,9 +50,9 @@
                 </div>
             </div>
             <div class="controlls flex space-between align-center">
-                <input type="text" id="meme-text-input" name="input-text" placeholder="CAN'T GET FIRED"
-                    oninput="OnUpdateMeme(this.value)">
-                <div class="line-btns ">
+                <input type="text" class="meme-text-input" id="meme-text-input" name="input-text"
+                    placeholder="CAN'T GET FIRED" oninput="OnUpdateMeme(this.value)">
+                <div class="line-btns">
                     <button class="btn switch-line" onclick="onSwitchLine()"><i class="fa-solid fa-arrow-up"></i> <i
                             class="fa-solid fa-arrow-down"></i></button>
 

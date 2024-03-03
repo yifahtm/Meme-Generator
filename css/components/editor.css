@@ -66,6 +66,7 @@ canvas {
 
 .txt-controlls {
     background-color: var(--color-fourth);
+    justify-content: space-evenly;
 }
 
 .txt-controlls>* {
